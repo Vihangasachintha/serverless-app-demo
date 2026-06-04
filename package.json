@@ -1,0 +1,13 @@
+{
+  "name": "serverless-demo",
+  "version": "1.0.0",
+  "description": "A simple serverless app using Vercel Functions + 3 free REST APIs",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "devDependencies": {
+    "vercel": "^33.0.0"
+  }
+}

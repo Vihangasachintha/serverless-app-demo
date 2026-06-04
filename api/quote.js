@@ -4,7 +4,7 @@ module.exports = async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
 
   try {
-    const response = await fetch("dummyjson.com/quotes");
+    const response = await fetch("https://dummyjson.com");
     if (!response.ok) throw new Error("Quotable API responded with " + response.status);
 
     const data = await response.json();

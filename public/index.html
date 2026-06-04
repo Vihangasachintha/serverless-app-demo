@@ -34,14 +34,10 @@
       padding: 0 16px 60px;
     }
 
-    /* ---- Header ---- */
     header {
       max-width: 860px;
       margin: 0 auto;
       padding: 48px 0 36px;
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
     }
     .header-badge {
       display: inline-flex;
@@ -71,6 +67,7 @@
       letter-spacing: -.02em;
       line-height: 1.2;
       color: #fff;
+      margin-top: 14px;
     }
     h1 strong { font-weight: 500; color: var(--accent); }
     .subtitle {
@@ -78,10 +75,24 @@
       font-size: 14px;
       color: var(--muted);
       line-height: 1.6;
-      max-width: 500px;
+      max-width: 520px;
     }
 
-    /* ---- Layout ---- */
+    /* mode notice */
+    .mode-notice {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      background: rgba(249,169,75,.08);
+      border: 1px solid rgba(249,169,75,.2);
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 12px;
+      color: var(--accent3);
+      font-family: var(--mono);
+    }
+
     main {
       max-width: 860px;
       margin: 0 auto;
@@ -90,10 +101,8 @@
       gap: 16px;
     }
     @media (max-width: 600px) { main { grid-template-columns: 1fr; } }
-
     .card-wide { grid-column: 1 / -1; }
 
-    /* ---- Cards ---- */
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -128,15 +137,11 @@
       text-transform: uppercase;
       color: var(--muted);
     }
-    .dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; }
     .dot-blue  { background: var(--accent); }
     .dot-teal  { background: var(--accent2); }
     .dot-amber { background: var(--accent3); }
 
-    /* ---- Buttons ---- */
     button {
       font-family: var(--font);
       cursor: pointer;
@@ -154,7 +159,6 @@
     button:active { transform: translateY(0); }
     button:disabled { opacity: .45; cursor: not-allowed; transform: none; }
 
-    /* ---- Weather ---- */
     .weather-big {
       font-size: 52px;
       font-weight: 300;
@@ -163,16 +167,8 @@
       line-height: 1;
       margin: 8px 0 4px;
     }
-    .weather-cond {
-      font-size: 16px;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-    .weather-meta {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+    .weather-cond { font-size: 16px; color: var(--muted); margin-bottom: 20px; }
+    .weather-meta { display: flex; gap: 12px; flex-wrap: wrap; }
     .meta-chip {
       background: var(--surface2);
       border: 1px solid var(--border);
@@ -183,13 +179,7 @@
     }
     .meta-chip span { color: var(--text); font-weight: 500; }
 
-    /* ---- Joke ---- */
-    .joke-text {
-      font-size: 15px;
-      line-height: 1.7;
-      color: var(--text);
-      min-height: 60px;
-    }
+    .joke-text { font-size: 15px; line-height: 1.7; color: var(--text); min-height: 60px; }
     .joke-delivery {
       margin-top: 12px;
       padding: 12px 16px;
@@ -211,7 +201,6 @@
       font-family: var(--mono);
     }
 
-    /* ---- Quote ---- */
     .quote-text {
       font-size: 16px;
       line-height: 1.75;
@@ -219,20 +208,11 @@
       font-style: italic;
       min-height: 64px;
     }
-    .quote-text::before { content: '"'; color: var(--accent2); font-size: 1.4em; font-style: normal; }
-    .quote-text::after  { content: '"'; color: var(--accent2); font-size: 1.4em; font-style: normal; }
-    .quote-author {
-      margin-top: 14px;
-      font-size: 13px;
-      color: var(--muted);
-    }
+    .quote-text::before { content: '\201C'; color: var(--accent2); font-size: 1.4em; font-style: normal; }
+    .quote-text::after  { content: '\201D'; color: var(--accent2); font-size: 1.4em; font-style: normal; }
+    .quote-author { margin-top: 14px; font-size: 13px; color: var(--muted); }
     .quote-author strong { color: var(--accent2); font-weight: 500; }
-    .quote-tags {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
+    .quote-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
     .tag {
       font-size: 11px;
       font-family: var(--mono);
@@ -242,7 +222,6 @@
       border-radius: 20px;
     }
 
-    /* ---- State ---- */
     .loading-bar {
       height: 2px;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
@@ -260,11 +239,7 @@
       font-family: var(--mono);
       margin-top: 14px;
     }
-    .status-ok   { color: var(--green); }
-    .status-err  { color: var(--red); }
-    .status-load { color: var(--accent); }
 
-    /* ---- Architecture strip ---- */
     .arch {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -286,6 +261,7 @@
       align-items: center;
       gap: 0;
       flex-wrap: wrap;
+      gap: 4px;
       font-size: 12px;
       font-family: var(--mono);
     }
@@ -293,196 +269,203 @@
       background: var(--surface2);
       border: 1px solid var(--border);
       border-radius: 6px;
-      padding: 6px 12px;
+      padding: 5px 11px;
       white-space: nowrap;
     }
-    .arch-arrow {
-      color: var(--muted);
-      margin: 0 6px;
-      font-size: 14px;
-    }
-    .arch-fn { color: var(--accent3); }
+    .arch-arrow { color: var(--muted); margin: 0 2px; }
+    .arch-fn  { color: var(--accent3); }
     .arch-api { color: var(--accent2); }
-    .arch-br { color: var(--accent); }
+    .arch-br  { color: var(--accent); }
+    .arch-note {
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--muted);
+      font-family: var(--mono);
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <div>
-    <div class="header-badge"><span class="pulse"></span>Serverless Demo</div>
-    <h1 style="margin-top:14px">Three <strong>serverless</strong> functions.<br>Three live REST APIs.</h1>
-    <p class="subtitle">Each button triggers an isolated function on Vercel — no persistent server. It wakes up, fetches data, and goes back to sleep.</p>
-  </div>
+  <div class="header-badge"><span class="pulse"></span>Serverless Demo</div>
+  <h1>Three <strong>serverless</strong> functions.<br>Three live REST APIs.</h1>
+  <p class="subtitle">Each button simulates a serverless function call — fetching live data from a free public API. No server required to open this file.</p>
+  <div class="mode-notice">⚡ standalone mode — calls go directly to public APIs (no local server needed)</div>
 </header>
 
 <main>
 
   <!-- WEATHER CARD -->
-  <div class="card" id="weather-card">
+  <div class="card">
     <div class="card-header">
-      <div class="card-label"><span class="dot dot-blue"></span>Weather</div>
+      <div class="card-label"><span class="dot dot-blue"></span>Weather · Colombo, LK</div>
       <button class="btn-blue" id="weather-btn" onclick="fetchWeather()">Fetch</button>
     </div>
     <div class="loading-bar" id="weather-bar"></div>
-    <div id="weather-content">
-      <div class="weather-big" id="w-temp">—</div>
-      <div class="weather-cond" id="w-cond">Click Fetch to call /api/weather</div>
-      <div class="weather-meta">
-        <div class="meta-chip">Wind <span id="w-wind">—</span></div>
-        <div class="meta-chip">Humidity <span id="w-hum">—</span></div>
-        <div class="meta-chip">Location <span id="w-tz">—</span></div>
-      </div>
+    <div class="weather-big" id="w-temp">—</div>
+    <div class="weather-cond" id="w-cond">Click Fetch to load live weather</div>
+    <div class="weather-meta">
+      <div class="meta-chip">Wind <span id="w-wind">—</span></div>
+      <div class="meta-chip">Humidity <span id="w-hum">—</span></div>
+      <div class="meta-chip">Feels like <span id="w-feel">—</span></div>
     </div>
     <div class="status-row" id="weather-status">
-      <span>GET</span><span style="color:var(--muted)">/api/weather</span><span>→</span><span>open-meteo.com</span>
+      <span>GET</span><span>open-meteo.com/v1/forecast</span>
     </div>
   </div>
 
   <!-- JOKE CARD -->
-  <div class="card" id="joke-card">
+  <div class="card">
     <div class="card-header">
-      <div class="card-label"><span class="dot dot-amber"></span>Joke</div>
+      <div class="card-label"><span class="dot dot-amber"></span>Joke · Programming</div>
       <button class="btn-amber" id="joke-btn" onclick="fetchJoke()">Fetch</button>
     </div>
     <div class="loading-bar" id="joke-bar"></div>
-    <div id="joke-content">
-      <div class="joke-text" id="j-setup">Click Fetch to call /api/joke</div>
-      <div class="joke-delivery" id="j-delivery" style="display:none"></div>
-      <div class="joke-category" id="j-cat" style="display:none"></div>
-    </div>
+    <div class="joke-text" id="j-setup">Click Fetch to load a joke</div>
+    <div class="joke-delivery" id="j-delivery" style="display:none"></div>
+    <div class="joke-category" id="j-cat" style="display:none"></div>
     <div class="status-row" id="joke-status">
-      <span>GET</span><span style="color:var(--muted)">/api/joke</span><span>→</span><span>jokeapi.dev</span>
+      <span>GET</span><span>v2.jokeapi.dev/joke/Programming</span>
     </div>
   </div>
 
   <!-- QUOTE CARD -->
-  <div class="card card-wide" id="quote-card">
+  <div class="card card-wide">
     <div class="card-header">
-      <div class="card-label"><span class="dot dot-teal"></span>Quote</div>
+      <div class="card-label"><span class="dot dot-teal"></span>Quote · Random</div>
       <button class="btn-teal" id="quote-btn" onclick="fetchQuote()">Fetch</button>
     </div>
     <div class="loading-bar" id="quote-bar"></div>
-    <div id="quote-content">
-      <div class="quote-text" id="q-text">Click Fetch to call /api/quote</div>
-      <div class="quote-author" id="q-author"></div>
-      <div class="quote-tags" id="q-tags"></div>
-    </div>
+    <div class="quote-text" id="q-text">Click Fetch to load a quote</div>
+    <div class="quote-author" id="q-author"></div>
+    <div class="quote-tags" id="q-tags"></div>
     <div class="status-row" id="quote-status">
-      <span>GET</span><span style="color:var(--muted)">/api/quote</span><span>→</span><span>quotable.kurokeita.dev</span>
+      <span>GET</span><span>quotable.kurokeita.dev/api/quotes/random</span>
     </div>
   </div>
 
 </main>
 
-<!-- Architecture strip -->
 <div class="arch">
-  <h2>How a request flows</h2>
+  <h2>Serverless request flow (what happens on Vercel)</h2>
   <div class="arch-row">
     <span class="arch-node arch-br">Browser</span>
     <span class="arch-arrow">→</span>
-    <span class="arch-node">API Gateway</span>
+    <span class="arch-node">Vercel Edge</span>
     <span class="arch-arrow">→</span>
-    <span class="arch-node arch-fn">fn: weather()</span>
+    <span class="arch-node arch-fn">fn: weather.js</span>
     <span class="arch-arrow">→</span>
     <span class="arch-node arch-api">open-meteo.com</span>
-    <span class="arch-arrow" style="margin-left:16px;color:#444">|</span>
-    <span class="arch-node arch-fn" style="margin-left:16px">fn: joke()</span>
+    <span class="arch-arrow" style="margin:0 10px;color:#333">|</span>
+    <span class="arch-node arch-fn">fn: joke.js</span>
     <span class="arch-arrow">→</span>
     <span class="arch-node arch-api">jokeapi.dev</span>
-    <span class="arch-arrow" style="margin-left:16px;color:#444">|</span>
-    <span class="arch-node arch-fn" style="margin-left:16px">fn: quote()</span>
+    <span class="arch-arrow" style="margin:0 10px;color:#333">|</span>
+    <span class="arch-node arch-fn">fn: quote.js</span>
     <span class="arch-arrow">→</span>
-    <span class="arch-node arch-api">quotable.io</span>
+    <span class="arch-node arch-api">quotable API</span>
   </div>
+  <p class="arch-note">In standalone mode (opening index.html directly), the browser calls the APIs. On Vercel, the /api/*.js functions handle these calls server-side.</p>
 </div>
 
 <script>
-  // In production these come from your Vercel deployment URL.
-  // Locally, vercel dev proxies /api/* to your functions.
-  const API = '';
+  const WEATHER_CODES = {
+    0:"Clear sky",1:"Mainly clear",2:"Partly cloudy",3:"Overcast",
+    45:"Foggy",48:"Icy fog",51:"Light drizzle",53:"Drizzle",55:"Heavy drizzle",
+    61:"Slight rain",63:"Moderate rain",65:"Heavy rain",
+    71:"Slight snow",73:"Moderate snow",75:"Heavy snow",
+    80:"Rain showers",81:"Moderate showers",82:"Violent showers",
+    95:"Thunderstorm",99:"Thunderstorm + hail"
+  };
 
-  function setLoading(prefix, on) {
-    const bar = document.getElementById(prefix + '-bar');
-    const btn = document.getElementById(prefix + '-btn');
-    bar.style.width = on ? '75%' : '100%';
-    btn.disabled = on;
-    if (!on) setTimeout(() => bar.style.width = '0%', 500);
+  function bar(id, pct) {
+    document.getElementById(id+'-bar').style.width = pct+'%';
   }
-
-  function setStatus(prefix, msg, type='ok') {
-    const el = document.getElementById(prefix + '-status');
-    const colors = { ok: 'var(--green)', err: 'var(--red)', load: 'var(--accent)' };
-    el.innerHTML = `<span style="color:${colors[type]}">${msg}</span>`;
+  function status(id, html) {
+    document.getElementById(id+'-status').innerHTML = html;
+  }
+  function btn(id, disabled) {
+    document.getElementById(id+'-btn').disabled = disabled;
   }
 
   async function fetchWeather() {
-    setLoading('weather', true);
-    setStatus('weather', 'Calling /api/weather...', 'load');
+    btn('weather', true); bar('weather', 70);
+    status('weather', '<span style="color:var(--accent)">calling /api/weather…</span>');
     try {
-      // Default coords: Colombo, LK
-      const res = await fetch(`${API}/api/weather?lat=6.9271&lon=79.8612`);
+      const res = await fetch('/api/weather?lat=6.9271&lon=79.8612');
+      if (!res.ok) throw new Error('HTTP ' + res.status);
       const d = await res.json();
       if (d.error) throw new Error(d.error);
 
-      document.getElementById('w-temp').textContent = d.temperature + d.unit;
-      document.getElementById('w-cond').textContent = d.condition;
-      document.getElementById('w-wind').textContent = d.windspeed + ' km/h';
-      document.getElementById('w-hum').textContent = d.humidity + '%';
-      document.getElementById('w-tz').textContent = d.timezone.split('/').pop().replace('_',' ');
-      setStatus('weather', '200 OK — open-meteo.com responded', 'ok');
+      document.getElementById('w-temp').textContent  = d.temperature + d.unit;
+      document.getElementById('w-cond').textContent  = d.condition;
+      document.getElementById('w-wind').textContent  = d.windspeed + ' km/h';
+      document.getElementById('w-hum').textContent   = d.humidity + '%';
+      document.getElementById('w-feel').textContent  = d.apparent + d.unit;
+      bar('weather', 100);
+      status('weather', '<span style="color:var(--green)">200 OK</span> · /api/weather → open-meteo.com');
     } catch(e) {
-      setStatus('weather', 'Error: ' + e.message, 'err');
+      status('weather', '<span style="color:var(--red)">Error: '+e.message+'</span>');
+      bar('weather', 0);
     }
-    setLoading('weather', false);
+    setTimeout(() => bar('weather', 0), 600);
+    btn('weather', false);
   }
 
   async function fetchJoke() {
-    setLoading('joke', true);
-    setStatus('joke', 'Calling /api/joke...', 'load');
+    btn('joke', true); bar('joke', 70);
+    status('joke', '<span style="color:var(--accent3)">calling /api/joke…</span>');
     try {
-      const res = await fetch(`${API}/api/joke`);
+      const res = await fetch('/api/joke');
+      if (!res.ok) throw new Error('HTTP ' + res.status);
       const d = await res.json();
       if (d.error) throw new Error(d.error);
 
-      const setup = document.getElementById('j-setup');
+      const setup    = document.getElementById('j-setup');
       const delivery = document.getElementById('j-delivery');
-      const cat = document.getElementById('j-cat');
+      const cat      = document.getElementById('j-cat');
 
       if (d.type === 'single') {
-        setup.textContent = d.text;
+        setup.textContent      = d.joke;
         delivery.style.display = 'none';
       } else {
-        setup.textContent = d.setup;
-        delivery.textContent = d.delivery;
+        setup.textContent      = d.setup;
+        delivery.textContent   = d.delivery;
         delivery.style.display = 'block';
       }
-      cat.textContent = '#' + d.category;
+      cat.textContent   = '#' + d.category;
       cat.style.display = 'inline-block';
-      setStatus('joke', '200 OK — jokeapi.dev responded', 'ok');
+      bar('joke', 100);
+      status('joke', '<span style="color:var(--green)">200 OK</span> · /api/joke → jokeapi.dev');
     } catch(e) {
-      setStatus('joke', 'Error: ' + e.message, 'err');
+      status('joke', '<span style="color:var(--red)">Error: '+e.message+'</span>');
+      bar('joke', 0);
     }
-    setLoading('joke', false);
+    setTimeout(() => bar('joke', 0), 600);
+    btn('joke', false);
   }
 
   async function fetchQuote() {
-    setLoading('quote', true);
-    setStatus('quote', 'Calling /api/quote...', 'load');
+    btn('quote', true); bar('quote', 70);
+    status('quote', '<span style="color:var(--accent2)">calling /api/quote…</span>');
     try {
-      const res = await fetch(`${API}/api/quote`);
+      const res = await fetch('/api/quote');
+      if (!res.ok) throw new Error('HTTP ' + res.status);
       const d = await res.json();
       if (d.error) throw new Error(d.error);
 
-      document.getElementById('q-text').textContent = d.quote;
-      document.getElementById('q-author').innerHTML = `— <strong>${d.author}</strong>`;
-      const tagsEl = document.getElementById('q-tags');
-      tagsEl.innerHTML = d.tags.slice(0,5).map(t => `<span class="tag">${t}</span>`).join('');
-      setStatus('quote', '200 OK — quotable.kurokeita.dev responded', 'ok');
+      document.getElementById('q-text').textContent   = d.quote;
+      document.getElementById('q-author').innerHTML   = '— <strong>' + d.author + '</strong>';
+      document.getElementById('q-tags').innerHTML     = (d.tags||[]).slice(0,5)
+        .map(t => '<span class="tag">' + t + '</span>').join('');
+      bar('quote', 100);
+      status('quote', '<span style="color:var(--green)">200 OK</span> · /api/quote → quotable API');
     } catch(e) {
-      setStatus('quote', 'Error: ' + e.message, 'err');
+      status('quote', '<span style="color:var(--red)">Error: '+e.message+'</span>');
+      bar('quote', 0);
     }
-    setLoading('quote', false);
+    setTimeout(() => bar('quote', 0), 600);
+    btn('quote', false);
   }
 </script>
 </body>
